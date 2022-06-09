@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* Accordion styles */
+.tab-label::after {
+  content: "❯";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+}
+.tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  background: rgb(192, 192, 192);
+  transition: all 0.35s;
+  color: #171917;
+}
+.tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #171917;
+  cursor: pointer;
+}
+.tab-close:hover {
+  background: black;
+}
+
+.checkbox-sidebar:checked + .tab-label {
+  background: black;
+}
+.checkbox-sidebar:checked + .tab-label::after {
+  transform: rotate(90deg);
+}
+.checkbox-sidebar:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 0;
+}
