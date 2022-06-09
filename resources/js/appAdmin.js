@@ -4,4 +4,4 @@ require('./populateForm');
 require('./populateComboBox');
 require('./darkMode');
 require('./showHide');
-window.doT = require('doT');
+window.doT = require('dot');

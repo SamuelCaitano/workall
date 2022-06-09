@@ -41,16 +41,16 @@
         <input type="checkbox" id="chck1" class="checkbox-sidebar absolute opacity-0 z-0">
         <!-- pegar o nome do modulo-->
         <label
-          class="tab-label cursor-pointer flex justify-between bg-transparent p-2 text-gray-500  hover:bg-gray-700 hover:bg-opacity-25"
+          class="tab-label cursor-pointer flex items-center py-2 px-6 justify-between bg-transparent p-2 text-gray-500  hover:bg-gray-700 hover:bg-opacity-25"
           for="chck1">
-          <i class="fas fa-gears px-1"></i>
+          <i class="fas fa-gears"></i>
           <span>Config. Usuário</span>
         </label>
         <div class="tab-content">
           <!-- foreach na paginas -->
           <div class="w-64 hover:bg-gray-400">
             <div class="link">
-              <a class="flex items-center cursor-pointer ml-3 w-7 h-8" href="/admin/userProfile">
+              <a class="flex items-center cursor-pointer ml-5 w-full h-8" href="/admin/userProfile">
                 <span class="flex items-center justify-center w-7 h-7"><i
                     class="fa-solid fa-address-card text-xl"></i></span>
                 <span class="mx-3">Perfil</span>
@@ -60,7 +60,7 @@
           <!-- endforeach -->
           <div class="w-64 hover:bg-gray-400">
             <div class="link">
-              <a class="flex items-center cursor-pointer ml-3 w-7 h-8"  href="/admin/user"><span
+              <a class="flex items-center cursor-pointer ml-5 w-full h-8"  href="/admin/user"><span
                   class="flex items-center justify-center w-7 h-7"><i class="fa-solid fa-user text-xl"></i></span><span
                   class="mx-3">Usuário</span></a>
             </div>

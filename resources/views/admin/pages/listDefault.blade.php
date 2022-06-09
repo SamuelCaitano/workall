@@ -473,7 +473,7 @@
 
     async function onClickBtnFooterModalCancel(event) {
       const resp = await swal({
-        title: `Deseja cancelar e volvar para lista?`,
+        title: `Deseja cancelar e voltar para lista?`,
         icon: 'warning',
         buttons: {
           yes: {

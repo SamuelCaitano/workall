@@ -30,7 +30,7 @@ class UserProfileController extends AdminController
         'gridList' => [
           'rowData' => $list,
           'columns' => [
-            ['headerName' => 'ID', 'field' => 'id', 'flex' => '15', 'sort' => 'asc'],
+            ['headerName' => 'ID', 'field' => 'id', 'flex' => '15'],
             ['headerName' => 'Nome', 'field' => 'name', 'flex' => '45'],
             ['headerName' => 'Nível', 'field' => 'level', 'flex' => '20'],
             $this->getBtnActionTmpl(),

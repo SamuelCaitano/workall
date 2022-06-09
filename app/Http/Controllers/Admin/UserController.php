@@ -34,7 +34,7 @@ class UserController extends AdminController
         'gridList' => [
           'rowData' => $list,
           'columns' => [
-            ['headerName' => 'ID', 'field' => 'id', 'flex' => '30', 'sort' => 'asc'],
+            ['headerName' => 'ID', 'field' => 'id', 'flex' => '30'],
             ['headerName' => 'Nome', 'field' => 'name', 'flex' => '20'],
             ['headerName' => 'Username', 'field' => 'username', 'flex' => '20'],
             ['headerName' => 'E-mail', 'field' => 'email', 'flex' => '20'],

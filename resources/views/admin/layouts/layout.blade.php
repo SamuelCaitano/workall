@@ -49,5 +49,6 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
+  <script type="text/javascript" src="doT.js"></script>
   @stack('js')
 </body> 

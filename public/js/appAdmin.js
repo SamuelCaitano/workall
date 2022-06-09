@@ -2510,9 +2510,9 @@ function showHide() {
 
 /***/ }),
 
-/***/ "./node_modules/doT/doT.js":
+/***/ "./node_modules/dot/doT.js":
 /*!*********************************!*\
-  !*** ./node_modules/doT/doT.js ***!
+  !*** ./node_modules/dot/doT.js ***!
   \*********************************/
 /***/ ((module, exports, __webpack_require__) => {
 
@@ -20139,7 +20139,7 @@ __webpack_require__(/*! ./darkMode */ "./resources/js/darkMode.js");
 
 __webpack_require__(/*! ./showHide */ "./resources/js/showHide.js");
 
-window.doT = __webpack_require__(/*! doT */ "./node_modules/doT/doT.js");
+window.doT = __webpack_require__(/*! dot */ "./node_modules/dot/doT.js");
 })();
 
 /******/ })()

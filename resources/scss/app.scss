@@ -7,89 +7,89 @@
 @tailwind utilities;
 
 //FontAwesome
-@import '~@fortawesome/fontawesome-free/scss/brands';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '~@fortawesome/fontawesome-free/scss/brands';
+// @import '~@fortawesome/fontawesome-free/scss/regular';
+// @import '~@fortawesome/fontawesome-free/scss/solid';
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-#sidebarDropdown {
-	@apply md:block h-full overflow-y-auto dark:border-0 border-blue-100 bg-blue-900 dark:bg-gray-900 text-gray-200;
+// #sidebarDropdown {
+// 	@apply md:block h-full overflow-y-auto dark:border-0 border-blue-100 bg-blue-900 dark:bg-gray-900 text-gray-200;
 
-	input[type="checkbox"] {
-		~ ul {
-			@apply max-h-0 overflow-hidden whitespace-nowrap transition-all duration-1000 ease-out;
-		}
+// 	input[type="checkbox"] {
+// 		~ ul {
+// 			@apply max-h-0 overflow-hidden whitespace-nowrap transition-all duration-1000 ease-out;
+// 		}
 
-		&:checked ~ ul {
-			@apply max-h-144 ease-in;
-		}
-	}
+// 		&:checked ~ ul {
+// 			@apply max-h-144 ease-in;
+// 		}
+// 	}
 
-	ul li {
-		label {
-			@apply flex flex-1 px-1 py-1 text-gray-400 cursor-pointer dark:hover:bg-gray-700 hover:bg-blue-600;
-		}
+// 	ul li {
+// 		label {
+// 			@apply flex flex-1 px-1 py-1 text-gray-400 cursor-pointer dark:hover:bg-gray-700 hover:bg-blue-600;
+// 		}
 
-		span {
-			@apply inline-block w-0 mx-1 overflow-hidden whitespace-nowrap transform duration-300;
-		}
+// 		span {
+// 			@apply inline-block w-0 mx-1 overflow-hidden whitespace-nowrap transform duration-300;
+// 		}
 
-		a {
-			@apply flex flex-1 px-2 py-2 dark:hover:bg-gray-700 hover:bg-blue-600;
-		}
-	}
+// 		a {
+// 			@apply flex flex-1 px-2 py-2 dark:hover:bg-gray-700 hover:bg-blue-600;
+// 		}
+// 	}
 
-	:hover > & ul li span {
-		@apply w-full;
-	}
+// 	:hover > & ul li span {
+// 		@apply w-full;
+// 	}
 
-	@media (min-width: $screen-md) {
-		ul li span {
-			@apply w-full;
-		}
-	}
-}
+// 	@media (min-width: $screen-md) {
+// 		ul li span {
+// 			@apply w-full;
+// 		}
+// 	}
+// }
 
-.action-btn {
-	@apply p-2 mx-1 font-bold rounded;
+// .action-btn {
+// 	@apply p-2 mx-1 font-bold rounded;
 
-	line-height: normal;
+// 	line-height: normal;
 
-	&_disable {
-		@apply bg-red-300 hover:bg-red-500 hover:text-gray-900;
-	}
+// 	&_disable {
+// 		@apply bg-red-300 hover:bg-red-500 hover:text-gray-900;
+// 	}
 
-	&_enable {
-		@apply bg-green-300 hover:bg-green-500 hover:text-gray-900;
-	}
+// 	&_enable {
+// 		@apply bg-green-300 hover:bg-green-500 hover:text-gray-900;
+// 	}
 
-	&_edit {
-		@apply bg-yellow-300 hover:bg-yellow-500 hover:text-gray-900;
-	}
+// 	&_edit {
+// 		@apply bg-yellow-300 hover:bg-yellow-500 hover:text-gray-900;
+// 	}
 
-	&_add {
-		@apply bg-blue-300 hover:bg-blue-500 hover:text-gray-900;
-	}
-}
+// 	&_add {
+// 		@apply bg-blue-300 hover:bg-blue-500 hover:text-gray-900;
+// 	}
+// }
 
-.swal-modal {
-	.swal-footer {
-		@apply flex justify-around text-center overflow-hidden;
-		border-top: 1px solid #E9EEF1;
+// .swal-modal {
+// 	.swal-footer {
+// 		@apply flex justify-around text-center overflow-hidden;
+// 		border-top: 1px solid #E9EEF1;
 
-		.swal-button {
-			&--yes {
-				@apply bg-red-500 hover:bg-red-300 hover:text-gray-900;
-			}
+// 		.swal-button {
+// 			&--yes {
+// 				@apply bg-red-500 hover:bg-red-300 hover:text-gray-900;
+// 			}
 
-			&--no {
-				@apply bg-green-500 hover:bg-green-300 hover:text-gray-900;
-			}
-		}
-	}
+// 			&--no {
+// 				@apply bg-green-500 hover:bg-green-300 hover:text-gray-900;
+// 			}
+// 		}
+// 	}
 
-}
+// }
 
-.input_default {
-	@apply block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
-}
+// .input_default {
+// 	@apply block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
+// }
