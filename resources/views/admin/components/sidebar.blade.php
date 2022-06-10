@@ -69,5 +69,41 @@
       </div>
     </div>
     <!-- endforeach -->
+
+    <!-- criar foreach para os modulos -->
+    <div class="tabs flex justify-center overflow-hidden">
+      <div class="tab text-white overflow-hidden w-64 mt-1">
+        <!-- pegar o id do modulo e inserir no id  do input-->
+        <input type="checkbox" id="chck2" class="checkbox-sidebar absolute opacity-0 z-0">
+        <!-- pegar o nome do modulo-->
+        <label
+          class="tab-label cursor-pointer flex items-center py-2 px-6 justify-between bg-transparent p-2 text-gray-500  hover:bg-gray-700 hover:bg-opacity-25"
+          for="chck2">
+          <i class="fas fa-gears"></i>
+          <span>Config. Pág. Menu</span>
+        </label>
+        <div class="tab-content">
+          <!-- foreach na paginas -->
+          <div class="w-64 hover:bg-gray-400">
+            <div class="link">
+              <a class="flex items-center cursor-pointer ml-5 w-full h-8" href="/admin/sectionMenu">
+                <span class="flex items-center justify-center w-7 h-7"><i
+                    class="fa-solid fa-address-card text-xl"></i></span>
+                <span class="mx-3">Seção do Menu</span>
+              </a>
+            </div>
+          </div>
+          <!-- endforeach -->
+          <div class="w-64 hover:bg-gray-400">
+            <div class="link">
+              <a class="flex items-center cursor-pointer ml-5 w-full h-8"  href="/admin/pageMenu"><span
+                  class="flex items-center justify-center w-7 h-7"><i class="fa-solid fa-user text-xl"></i></span><span
+                  class="mx-3">Página do Menu</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endforeach -->
   </nav>
 </div>

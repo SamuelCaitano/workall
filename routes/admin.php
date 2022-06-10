@@ -18,3 +18,13 @@ Route::group([ 'prefix' => 'user' ], function() {
 	Route::patch('{id}', "{$ctrll}enable");
 	Route::put('{id}', "{$ctrll}save");
 });
+
+Route::group([ 'prefix' => 'sectionMenu' ], function() {
+  $ctrll = 'SectionMenuController@';
+	Route::get('', "{$ctrll}list");
+	Route::delete('{id}', "{$ctrll}disable");
+	Route::patch('{id}', "{$ctrll}enable");
+	Route::put('{id}', "{$ctrll}save");
+});
+
+
