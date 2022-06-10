@@ -14,6 +14,7 @@ window.FormRenderEngine = class FormRenderEngine {
 
 			if (field.label) {
 				const label = this.createElem('label')
+				label.style.marginLeft = "15px"
 				label.innerHTML = field.label
 				container.append(label)
 			}

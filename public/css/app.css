@@ -512,11 +512,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-1{
   margin-top: 0.25rem;
 }
-.ml-3{
-  margin-left: 0.75rem;
+.ml-5{
+  margin-left: 1.25rem;
 }
 .mr-3{
   margin-right: 0.75rem;
+}
+.ml-3{
+  margin-left: 0.75rem;
 }
 .ml-11{
   margin-left: 2.75rem;
@@ -874,10 +877,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-2\.5{
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-}
-.px-1{
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 .py-8{
   padding-top: 2rem;

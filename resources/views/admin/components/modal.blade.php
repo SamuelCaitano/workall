@@ -40,7 +40,7 @@
 </div>
 
 @push('js')
-  <script>
+  <script> 
     function modal(mn, action) {
       let modal = document.getElementById(mn);
       if (typeof modal == 'undefined' || modal == null)
