@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Models\SectionMenuModel; 
+use App\Models\PageMenuModel; 
+use App\Models\SectionMenuModel;
 
-class SectionMenuController extends AdminController
+class PageMenuController extends AdminController
 {
-  protected $model = SectionMenuModel::class;
+  protected $model = PageMenuModel::class;
 
   function index()
   {
@@ -16,25 +17,33 @@ class SectionMenuController extends AdminController
 
   // listagem dos usuarios e atributos do form
   function list()
-  {     
-    $list = $this->model::orderBy('name')->withTrashed()->get(); 
-    $baseUrl = '/admin/sectionMenu'; 
+  { 
+    $baseUrl = '/admin/pageMenu'; 
 
+    $list = $this->model::query()
+    ->with(['sectionMenu'])
+    ->withTrashed()
+    ->get();     
+    
     $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md';
 
     return view('admin.pages.listDefault', [
       'config' => [
-        'title' => 'Seções do Menu',
+        'title' => 'Páginas do Menu',
         'baseUrl' => $baseUrl,
+        'payloadComboBox' => [
+          'sectionMenu' => SectionMenuModel::query()->orderBy('name')->get(['id', 'name']),
+        ],
         'gridList' => [
           'rowData' => $list,
           'columns' => [
             ['headerName' => 'ID', 'field' => 'id', 'flex' => '20'],
             ['headerName' => 'Nome', 'field' => 'name', 'flex' => '20'],
+            ['headerName' => 'Seção', 'field' => 'section_menu.name', 'flex' => '20'],
             ['headerName' => 'Key', 'field' => 'key', 'flex' => '20'],
             ['headerName' => 'Icon', 'field' => 'icon', 'flex' => '20'],
             ['headerName' => 'Sequência', 'field' => 'sequence', 'flex' => '20'],
-            ['headerName' => 'Coontrole', 'field' => 'controller', 'flex' => '20'],
+            ['headerName' => 'Controle', 'field' => 'controller', 'flex' => '20'], 
             $this->getBtnActionTmpl(),
           ],
         ],
@@ -62,6 +71,20 @@ class SectionMenuController extends AdminController
                 'autocomplete' => 'none',
               ],
             ],
+            [
+              'label' => 'Seção:',
+              'attrs' => [
+                'name' => 'section_menu_id',
+                'type' => 'select',
+                'maxLength' => 255,
+                'class' => $inputTailwind,
+                'autocomplete' => 'none',
+              ],
+              'populate' => [
+                'target' => 'sectionMenu',
+                'label' => 'name',
+              ],
+            ], 
             [
               'label' => 'Key:',
               'attrs' => [
@@ -94,19 +117,18 @@ class SectionMenuController extends AdminController
                 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
-            ],
+            ],    
             [
               'label' => 'Controle:',
               'attrs' => [
                 'name' => 'controller',
-                'type' => 'number',
+                'type' => 'text',
                 'min' => 1,
                 'max' => 32,
                 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
-            ],
-            
+            ],       
           ],
         ],
       ],

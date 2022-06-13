@@ -27,4 +27,11 @@ Route::group([ 'prefix' => 'sectionMenu' ], function() {
 	Route::put('{id}', "{$ctrll}save");
 });
 
+Route::group([ 'prefix' => 'pageMenu' ], function() {
+  $ctrll = 'PageMenuController@';
+	Route::get('', "{$ctrll}list");
+	Route::delete('{id}', "{$ctrll}disable");
+	Route::patch('{id}', "{$ctrll}enable");
+	Route::put('{id}', "{$ctrll}save");
+});
 

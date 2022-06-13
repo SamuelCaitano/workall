@@ -6,32 +6,36 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('pages_menu', function (Blueprint $table) {
-            $table->uuid('id')->primary(); 
-            $table->timestamps();
-            $table->softDeletes();
-            $table->foreignId('section_menu_id')->references('id')->on('section_menu')->onDelete()->onUpdate();
-            $table->string('key', 32)->nullable();
-            $table->string('name', 32)->nullable();
-            $table->string('icon', 32)->nullable();
-            $table->string('controller', 64)->nullable();
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    if (!Schema::hasTable('pages_menu')) {
+      Schema::create('pages_menu', function (Blueprint $table) {
+        $table->uuid('id')->primary();
+        $table->foreignUuid('section_menu_id')->constrained('section_menu')->onDelete('cascade')->onUpdate('cascade');
+        $table->string('key', 32)->nullable();
+        $table->string('name', 32)->nullable();
+        $table->string('icon', 32)->nullable();
+        $table->string('sequence', 64)->nullable();
+        $table->string('controller', 64)->nullable(); 
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('pages_menu');
+        $table->timestamps();
+        $table->softDeletes();
+      });
     }
+  }
+
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('pages_menu');
+  }
 };

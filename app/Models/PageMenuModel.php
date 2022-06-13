@@ -1,26 +1,27 @@
 <?php
 
 namespace App\Models;
-use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
-class SectionMenuModel extends Authenticatable
+class PageMenuModel extends Authenticatable
 {
   use SoftDeletes;
 
-  protected $table = 'section_menu';
+  protected $table = 'pages_menu';
 
   protected $keyType = 'string';
 
   protected $fillable = [
     'id',
+    'section_menu_id',
     'key',
     'name',
     'icon',
     'sequence',
-    'controller',
+    'controller', 
   ];
 
   function setIdAttribute($val)
@@ -29,4 +30,9 @@ class SectionMenuModel extends Authenticatable
       $this->attributes['id'] = Str::uuid();
     }
   }
+
+  function sectionMenu()
+	{
+		return $this->hasOne('\App\Models\SectionMenuModel', 'id', 'section_menu_id');
+	}
 }
