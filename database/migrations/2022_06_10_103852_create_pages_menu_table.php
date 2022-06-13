@@ -16,12 +16,11 @@ return new class extends Migration
     if (!Schema::hasTable('pages_menu')) {
       Schema::create('pages_menu', function (Blueprint $table) {
         $table->uuid('id')->primary();
-        $table->foreignUuid('section_menu_id')->constrained('section_menu')->onDelete('cascade')->onUpdate('cascade');
-        $table->string('key', 32)->nullable();
         $table->string('name', 32)->nullable();
+        $table->foreignUuid('section_menu_id')->constrained('section_menu')->onDelete('cascade')->onUpdate('cascade')->nullable();
+        $table->string('key', 32)->nullable();
         $table->string('icon', 32)->nullable();
-        $table->string('sequence', 64)->nullable();
-        $table->string('controller', 64)->nullable(); 
+        $table->string('sequence', 64)->nullable();  
 
         $table->timestamps();
         $table->softDeletes();

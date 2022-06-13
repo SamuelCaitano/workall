@@ -15,12 +15,19 @@ return new class extends Migration
 	public function up()
 	{
 		DB::table('section_menu')->updateOrInsert( [
-			'id' => Str::uuid(), 
+			'id' => '2dcdb6ad-72b9-4b1e-a256-9f1f1713b31f',			
+			'name' => 'Config. Usuário', 
 			'key' => 'userConfig',
-			'name' => 'Config. Usuário',
-			'icon' => 'teste', 
-			'sequence' => '1', 
-			'controller' => '1'
+			'icon' => 'fa-solid fa-users-gear', 
+			'sequence' => '1',  
+		]);
+
+		DB::table('section_menu')->updateOrInsert( [
+			'id' => '7b6be19e-576e-4896-bdf2-1c8ad1fe4820',			
+			'name' => 'Config. Pág. Menu', 
+			'key' => 'pageMenu',
+			'icon' => 'fa-solid fa-folder-gear', 
+			'sequence' => '2',  
 		]);
 	}
 

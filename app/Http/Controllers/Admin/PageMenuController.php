@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\AdminController;
 use App\Models\PageMenuModel; 
 use App\Models\SectionMenuModel;
+use Illuminate\Http\Request;
 
 class PageMenuController extends AdminController
 {
@@ -42,8 +43,7 @@ class PageMenuController extends AdminController
             ['headerName' => 'Seção', 'field' => 'section_menu.name', 'flex' => '20'],
             ['headerName' => 'Key', 'field' => 'key', 'flex' => '20'],
             ['headerName' => 'Icon', 'field' => 'icon', 'flex' => '20'],
-            ['headerName' => 'Sequência', 'field' => 'sequence', 'flex' => '20'],
-            ['headerName' => 'Controle', 'field' => 'controller', 'flex' => '20'], 
+            ['headerName' => 'Sequência', 'field' => 'sequence', 'flex' => '20'], 
             $this->getBtnActionTmpl(),
           ],
         ],
@@ -117,21 +117,18 @@ class PageMenuController extends AdminController
                 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
-            ],    
-            [
-              'label' => 'Controle:',
-              'attrs' => [
-                'name' => 'controller',
-                'type' => 'text',
-                'min' => 1,
-                'max' => 32,
-                'class' => $inputTailwind,
-                'autocomplete' => 'none',
-              ],
-            ],       
+            ],         
           ],
         ],
       ],
     ]);
   } 
+
+  // funcao para salvar
+  function save(Request $request) {
+		$dataModel = (object) parent::save($request)->toArray();
+		$dataModel->section_menu = SectionMenuModel::find($dataModel->section_menu_id);
+
+		return $dataModel;
+	}
 }

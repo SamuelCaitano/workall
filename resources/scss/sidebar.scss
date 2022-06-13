@@ -15,10 +15,10 @@ $clouds: #ecf0f1;
   &-content {
     max-height: 0;
     padding: 0 1em;
-    color: $midnight;
-    background: rgb(192, 192, 192);
+    // color: $clouds;
+    // background: rgb(59, 59, 59);
     transition: all .35s;
-    color: $midnight;
+    // color: $midnight;
   }
   &-close {
     display: flex;

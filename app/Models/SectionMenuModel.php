@@ -19,8 +19,7 @@ class SectionMenuModel extends Authenticatable
     'key',
     'name',
     'icon',
-    'sequence',
-    'controller',
+    'sequence', 
   ];
 
   function setIdAttribute($val)

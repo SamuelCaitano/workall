@@ -16,11 +16,10 @@ return new class extends Migration
         if (!Schema::hasTable('section_menu')){
             Schema::create('section_menu', function (Blueprint $table) {
                 $table->uuid('id')->primary(); 
-                $table->string('key', 32)->nullable();
                 $table->string('name', 32)->nullable();
+                $table->string('key', 32)->nullable();
                 $table->string('icon', 32)->nullable();
-                $table->integer('sequence')->nullable(); 
-                $table->integer('controller')->nullable();                 
+                $table->string('sequence')->nullable();                   
                 $table->timestamps();
                 $table->softDeletes();
             });

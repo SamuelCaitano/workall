@@ -10,9 +10,7 @@
 .tab-content {
   max-height: 0;
   padding: 0 1em;
-  background: rgb(192, 192, 192);
   transition: all 0.35s;
-  color: #171917;
 }
 .tab-close {
   display: flex;
