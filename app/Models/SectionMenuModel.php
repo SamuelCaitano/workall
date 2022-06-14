@@ -28,4 +28,8 @@ class SectionMenuModel extends Authenticatable
       $this->attributes['id'] = Str::uuid();
     }
   }
+
+  function pageMenu() {
+    return $this->hasMany('\App\Models\PageMenuModel', 'section_menu_id', 'id');
+  }
 }
