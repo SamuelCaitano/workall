@@ -16,6 +16,7 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   {{-- Cascading Style Sheets - CSS --}}
   <link rel="stylesheet" href="/css/styles.css"> 
+  <link href="/css/app.css" rel="stylesheet">
   @stack('css')
 
   <script>
@@ -50,5 +51,6 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
   <script type="text/javascript" src="doT.js"></script>
+  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
   @stack('js')
 </body> 

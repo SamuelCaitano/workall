@@ -42,7 +42,7 @@ class AdminController extends Controller
 				{{??}}
 					<div class="flex items-center justify-center h-10">
 						<button class="flex items-center justify-center w-6 h-6 rounded mx-1 bg-red-600 text-white hover:bg-gray-400" onClick="actionDisableEnable(0, \'{{=it.data.id}}\', {{=it.rowIndex}})"><i class="fa-solid fa-trash-can"></i></button>
-						<button class="flex items-center justify-center w-6 h-6 rounded mx-1 bg-green-400 text-white hover:bg-gray-400" type="button" onclick="modal(\'componentModal\', \'open\');actionForm({{=it.rowIndex}})"><i class="fa-solid fa-pencil"></i></button>
+						<button class="flex items-center justify-center w-6 h-6 rounded mx-1 bg-green-400 text-white hover:bg-gray-400" type="button" onclick="actionForm({{=it.rowIndex}})"><i class="fa-solid fa-pencil"></i></button>
 					</div>
 				{{?}}
 			',

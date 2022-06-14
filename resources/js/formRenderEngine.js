@@ -10,16 +10,15 @@ window.FormRenderEngine = class FormRenderEngine {
 
 	renderFields(fields) {
 		for (const field of fields) {
+			var classDiv = "relative"
+
 			const container = this.createElem('div')
 
-			if (field.label) {
-				const label = this.createElem('label')
-				label.style.marginLeft = "15px"
-				label.innerHTML = field.label
-				container.append(label)
-			}
+			container.setAttribute('class', classDiv)
 
 			if (field.attrs) {
+				let classTag = "block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+
 				let tag = 'input'
 
 				if (field.attrs.type === 'select') {
@@ -27,6 +26,13 @@ window.FormRenderEngine = class FormRenderEngine {
 				}
 
 				const input = this.createElem(tag)
+
+				let identify =   "teste"
+
+				input.setAttribute('id', identify)
+				
+				input.setAttribute('class', classTag)
+
 				this.setAttrs(input, field.attrs)
 
 				if (field.populate && this.params?.payloadComboBox[field.populate.target]) {
@@ -39,6 +45,21 @@ window.FormRenderEngine = class FormRenderEngine {
 
 				container.append(input)
 			}
+
+			if (field.label) {
+				let classe = "absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-800 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1"
+
+				const label = this.createElem('label') 
+
+				label.innerHTML = field.label
+
+				let id =   "teste"
+				label.setAttribute('for', id)
+
+				label.setAttribute('class', classe)
+
+				container.append(label)
+			}		
 
 			this.form.append(container)
 		}

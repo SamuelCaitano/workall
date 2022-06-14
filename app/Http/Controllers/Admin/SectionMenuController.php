@@ -20,7 +20,7 @@ class SectionMenuController extends AdminController
     $list = $this->model::orderBy('name')->withTrashed()->get(); 
     $baseUrl = '/admin/sectionMenu'; 
 
-    $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md';
+    // $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md';
 
     return view('admin.pages.listDefault', [
       'config' => [
@@ -57,7 +57,7 @@ class SectionMenuController extends AdminController
                 'type' => 'text',
                 'min' => 1,
                 'maxLength' => 32,
-                'class' => $inputTailwind,
+                // 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
             ],
@@ -68,7 +68,7 @@ class SectionMenuController extends AdminController
                 'type' => 'text',
                 
                 'max' => 32,
-                'class' => $inputTailwind,
+                // 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
             ],
@@ -79,7 +79,7 @@ class SectionMenuController extends AdminController
                 'type' => 'text',
                 'min' => 1,
                 'max' => 32,
-                'class' => $inputTailwind,
+                // 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
             ],
@@ -90,7 +90,7 @@ class SectionMenuController extends AdminController
                 'type' => 'number',
                 'min' => 1,
                 'max' => 32,
-                'class' => $inputTailwind,
+                // 'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
             ], 
