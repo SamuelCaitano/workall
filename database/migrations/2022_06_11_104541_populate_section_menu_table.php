@@ -29,6 +29,14 @@ return new class extends Migration
 			'icon' => 'fa-solid fa-folder-gear', 
 			'sequence' => '2',  
 		]);
+
+		DB::table('section_menu')->updateOrInsert( [
+			'id' => '2s6be19e-576e-4896-bdf2-1c8ad1fe4820',			
+			'name' => 'Config. Permissoẽs', 
+			'key' => 'authConfig',
+			'icon' => 'fa-solid fa-lock-keyhole', 
+			'sequence' => '3',  
+		]);
 	}
 
 	/**

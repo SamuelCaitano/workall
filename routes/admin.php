@@ -35,3 +35,12 @@ Route::group([ 'prefix' => 'pageMenu' ], function() {
 	Route::put('{id}', "{$ctrll}save");
 });
 
+Route::group([ 'prefix' => 'permission' ], function() {
+  $ctrll = 'PermissionController@';
+	Route::get('', "{$ctrll}list");
+	Route::delete('{id}', "{$ctrll}disable");
+	Route::patch('{id}', "{$ctrll}enable");
+	Route::put('{id}', "{$ctrll}save");
+});
+
+

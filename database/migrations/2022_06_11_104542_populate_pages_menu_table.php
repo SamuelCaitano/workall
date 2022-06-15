@@ -48,6 +48,15 @@ return new class extends Migration
 			'icon' => 'fa-solid fa-table-columns', 
 			'sequence' => '2',  
 		]);
+
+		DB::table('pages_menu')->updateOrInsert( [
+			'id' => Str::uuid(),
+			'name' => 'Permissoẽs de acesso',
+			'section_menu_id' => '2s6be19e-576e-4896-bdf2-1c8ad1fe4820',
+			'key' => 'permission',
+			'icon' => 'fa-solid fa-key', 
+			'sequence' => '1',  
+		]);
 	}
 
 	/**
