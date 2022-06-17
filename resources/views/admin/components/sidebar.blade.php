@@ -24,9 +24,6 @@
             </svg>
             <span class="mx-3">Dashboard</span>
         </a>
-        <script>
-          console.log(@json(sidebar()))
-        </script>
         @foreach (sidebar() as $section)
             <div class="tabs flex justify-center overflow-hidden">
                 <div class="tab text-white overflow-hidden w-64 mt-1">
