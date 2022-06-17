@@ -17,6 +17,9 @@
   {{-- Cascading Style Sheets - CSS --}}
   <link rel="stylesheet" href="/css/styles.css"> 
   <link href="/css/app.css" rel="stylesheet">
+  {{--  --}}
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+
   @stack('css')
 
   <script>
@@ -51,6 +54,8 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
   <script type="text/javascript" src="doT.js"></script>
+  <script src="../path/to/flowbite/dist/flowbite.js"></script>
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
+  
   @stack('js')
 </body> 

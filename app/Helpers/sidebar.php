@@ -9,7 +9,7 @@ function sidebar() {
     $query->select([ 'id', 'sequence', 'section_menu_id', 'key', 'name', 'icon' ]);
   })
   ->orderBy('sequence')->get([ 'id', 'sequence', 'key', 'name', 'icon' ]);
-
+  dd($sidebar);
   return $sidebar;
 
 }
