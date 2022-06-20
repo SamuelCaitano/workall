@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AdminController;
-use App\Models\PermissionModel; 
+use App\Models\PermissionModel;
+use App\Models\UserProfileModel;
+use Illuminate\Http\Request;
 
 class PermissionController extends AdminController
 {
@@ -14,26 +16,33 @@ class PermissionController extends AdminController
     return view('admin.pages.listDefault');
   }
 
-  // listagem dos usuarios e atributos do form
   function list()
-  {     
-    $list = $this->model::orderBy('name')->withTrashed()->get(); 
+  {  
     $baseUrl = '/admin/permisson'; 
+    
+    $list = $this->model::query()
+      ->with(['userProfile'])
+      ->orderBy('name')
+      ->withTrashed()
+      ->get();
 
-    // $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md';
+      // dd($list);
+
+    $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md'; 
 
     return view('admin.pages.listDefault', [
+      'data' => $list,
       'config' => [
         'title' => 'Permissoẽs de acesso',
         'baseUrl' => $baseUrl,
+        'payloadComboBox' => [
+          'userProfile' => UserProfileModel::query()->orderBy('name')->get(['id', 'name']),
+        ],
         'gridList' => [
           'rowData' => $list,
           'columns' => [
             ['headerName' => 'ID', 'field' => 'id', 'flex' => '20'],
-            ['headerName' => 'Nome', 'field' => 'name', 'flex' => '20'],
-            ['headerName' => 'Key', 'field' => 'key', 'flex' => '20'],
-            ['headerName' => 'Icon', 'field' => 'icon', 'flex' => '20'],
-            ['headerName' => 'Sequência', 'field' => 'sequence', 'flex' => '20'], 
+            ['headerName' => 'Perfil', 'field' => 'user_profile.name', 'flex' => '20'], 
             $this->getBtnActionTmpl(),
           ],
         ],
@@ -51,52 +60,30 @@ class PermissionController extends AdminController
               ],
             ],
             [
-              'label' => 'Nome:',
+              'label' => 'Perfil',
               'attrs' => [
-                'name' => 'name',
-                'type' => 'text',
-                'min' => 1,
-                'maxLength' => 32,
-                // 'class' => $inputTailwind,
+                'name' => 'user_profile_id',
+                'type' => 'select',
+                'maxLength' => 255,
+                'class' => $inputTailwind,
                 'autocomplete' => 'none',
               ],
-            ],
-            [
-              'label' => 'Key:',
-              'attrs' => [
-                'name' => 'key',
-                'type' => 'text',
-                
-                'max' => 32,
-                // 'class' => $inputTailwind,
-                'autocomplete' => 'none',
-              ],
-            ],
-            [
-              'label' => 'Icon:',
-              'attrs' => [
-                'name' => 'icon',
-                'type' => 'text',
-                'min' => 1,
-                'max' => 32,
-                // 'class' => $inputTailwind,
-                'autocomplete' => 'none',
-              ],
-            ],
-            [
-              'label' => 'Sequência:',
-              'attrs' => [
-                'name' => 'sequence',
-                'type' => 'number',
-                'min' => 1,
-                'max' => 32,
-                // 'class' => $inputTailwind,
-                'autocomplete' => 'none',
+              'populate' => [
+                'target' => 'userProfile',
+                'label' => 'name',
               ],
             ], 
           ],
         ],
       ],
     ]);
-  } 
+  }
+  
+  // funcao para salvar
+  function save(Request $request) {
+		$dataModel = (object) parent::save($request)->toArray();
+		$dataModel->permission = PermissionModel::find($dataModel->permission_id);
+
+		return $dataModel;
+	}
 }

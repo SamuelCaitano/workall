@@ -35,4 +35,9 @@ class PermissionModel extends Authenticatable
   function pageMenu() {
     return $this->hasMany('\App\Models\PageMenuModel', 'section_menu_id', 'id');
   } 
+
+  function userProfile()
+	{
+		return $this->hasOne('\App\Models\UserProfileModel', 'id', 'user_profile_id');
+	}
 }

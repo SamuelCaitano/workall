@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css" />
   <!-- Include the theme CSS, only need to import the theme you are going to use -->
   <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css" />
+  {{-- Flowbite  --}}
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
 @endpush
 
 @section('content')
@@ -265,5 +267,7 @@
         ComponentModal.hide()
       }
     }
-  </script>
+  </script> 
+  <script src="../path/to/flowbite/dist/flowbite.js" defer></script>
+  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
 @endpush

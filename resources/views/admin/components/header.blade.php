@@ -24,73 +24,28 @@
     </div>
   </div>
   
-  <style>
-    .label {
-      background-color: #111;
-      border-radius: 50px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px;
-      position: relative;
-      height: 32px;
-      width: 56px; 
-    }
+  <style> 
     input{
       margin: 0;
     }
-    .label .ball {
-      background-color: #fff;
-      border-radius: 50%;
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      height: 26px;
-      width: 26px;
+    #label #ball { 
+      top: 2px;
+      left: 2px; 
       transform: translateX(0px);
       transition: transform 0.2s linear;
-    }
-    header{
-      background-color: #fafafa;
-      display: flex;
-      align-items: center;
-      justify-content: center; 
-      margin: 0;
-      transition: background 0.2s linear;
-    }
-   .dark{
-      background: #292C35;
     }  
-    .checkbox{
-      opacity: 0;
-      position: absolute;
-    }
-    .checkbox:checked + .label .ball{
+    .checkbox:checked + #label #ball{
       transform: translateX(24px); 
-    }
-    .fa-moon{
-      /* color: #4F46E5; */
-    }
-    .fa-sun{
-      color: yellow;
-    }
-    .teste{
-      border: 1px solid red;
-      display: flex;
-      align-items: center;
-      margin: 0;
-      height: 32px;
-    } 
+    }  
   </style> 
 
   <div class="flex items-center">
     <div class="flex items-center justify-center relative -top-1">
-      <input type="checkbox" class="checkbox" id="chk">
-      <label for="chk" class="label">
+      <input type="checkbox" class="checkbox opacity-0 absolute" id="chk">
+      <label for="chk" id="label" class="bg-black rounded-full flex items-center justify-between p-1 h-8 w-16 cursor-pointer relative shadow-inner shadow-blue-500/50">
         <i class="fas fa-moon text-blue-700"></i>
-        <i class="fas fa-sun"></i>
-        <div class="ball"></div>
+        <i class="fas fa-sun text-yellow-300"></i>
+        <div id="ball" class="bg-white rounded-full absolute h-7 w-9"></div>
       </label>
     </div>
 

@@ -9,7 +9,7 @@
   {{-- FontAwesome --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
   {{-- Favicon --}}
   <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
   {{-- Tailwindcss --}}
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/css/styles.css"> 
   <link href="/css/app.css" rel="stylesheet">
   {{--  --}}
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"/>
 
   @stack('css')
 
@@ -54,7 +54,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
   <script type="text/javascript" src="doT.js"></script>
-  <script src="../path/to/flowbite/dist/flowbite.js"></script>
+  <script src="../path/to/flowbite/dist/flowbite.js" defer></script>
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
   
   @stack('js')
