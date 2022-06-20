@@ -124,7 +124,4 @@
       </div>
     </div>
   </div>
-</header> 
-
-<!-- Script to show and hide password-->
-<script src="{!! asset('js/darkMode.js') !!}"></script>
+</header>  

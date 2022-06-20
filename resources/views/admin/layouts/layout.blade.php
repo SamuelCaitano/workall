@@ -16,14 +16,11 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   {{-- Cascading Style Sheets - CSS --}}
   <link rel="stylesheet" href="/css/styles.css"> 
-  <link href="/css/app.css" rel="stylesheet">
-<<<<<<< HEAD
+  <link href="/css/app.css" rel="stylesheet"> 
   {{--  --}}
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"/>
-=======
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css"/> 
   {{-- Flowbite  --}}
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
->>>>>>> a77d27a61ed3b3e5d2e562f487c8991b1a62d441
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" /> 
 
   @stack('css')
 
@@ -58,13 +55,8 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
-  <script type="text/javascript" src="doT.js"></script>
-<<<<<<< HEAD
-  <script src="../path/to/flowbite/dist/flowbite.js" defer></script>
-=======
-  
-  <script src="../path/to/flowbite/dist/flowbite.js"></script>
->>>>>>> a77d27a61ed3b3e5d2e562f487c8991b1a62d441
+  {{-- <script type="text/javascript" src="doT.js"></script>  --}}
+  {{-- <script src="../path/to/flowbite/dist/flowbite.js" defer></script>   --}}
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
   
   @stack('js')

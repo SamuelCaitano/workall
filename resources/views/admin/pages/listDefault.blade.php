@@ -20,6 +20,7 @@
 @endsection
 
 @push('js')
+<script src="/plugins/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@27.3.0/dist/ag-grid-community.min.noStyle.js"></script>
   <script>
     const config = @json($config);
@@ -193,6 +194,10 @@
       }
 
       ComponentModal.setTitle(title + config.title).show()
+    }
+
+    function actionModal() {
+      ComponentModal.show()
     }
 
     async function onClickBtnFooterModalSave(event) {
