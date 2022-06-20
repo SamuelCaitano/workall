@@ -1269,6 +1269,10 @@ input:checked + .toggle-bg{
 .bg-white\/50{
   background-color: rgb(255 255 255 / 0.5);
 }
+.bg-yellow-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 88 10 / var(--tw-bg-opacity));
+}
 .bg-opacity-40{
   --tw-bg-opacity: 0.4;
 }
