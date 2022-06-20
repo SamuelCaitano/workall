@@ -26,7 +26,7 @@ return new class extends Migration
 			'id' => '7b6be19e-576e-4896-bdf2-1c8ad1fe4820',			
 			'name' => 'Config. Pág. Menu', 
 			'key' => 'pageMenu',
-			'icon' => 'fa-solid fa-folder-gear', 
+			'icon' => 'fa-solid fa-folder-plus', 
 			'sequence' => '2',  
 		]);
 
@@ -34,7 +34,7 @@ return new class extends Migration
 			'id' => '2s6be19e-576e-4896-bdf2-1c8ad1fe4820',			
 			'name' => 'Config. Permissoẽs', 
 			'key' => 'authConfig',
-			'icon' => 'fa-solid fa-lock-keyhole', 
+			'icon' => 'fa-solid fa-unlock-keyhole', 
 			'sequence' => '3',  
 		]);
 	}
