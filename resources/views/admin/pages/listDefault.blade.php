@@ -34,7 +34,7 @@
           this.eGui.innerHTML = `
 						<span class="flex-grow flex-1">${config.title}</span>
             <!-- Modal toggle --> 
-						<button onclick="actionForm()" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
+						<button onclick="actionModal()" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
               <i class="fa-solid fa-plus"></i>
             </button>
 					`
@@ -197,7 +197,8 @@
     }
 
     function actionModal() {
-      ComponentModal.show()
+      document.querySelector('#componentModal main').append(formRenderEngine.get())
+      ComponentModal.show() 
     }
 
     async function onClickBtnFooterModalSave(event) {

@@ -28,16 +28,16 @@ class PermissionController extends AdminController
 
       // dd($list);
 
-    $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md'; 
+    // $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md'; 
 
     return view('admin.pages.listDefault', [
       'data' => $list,
       'config' => [
         'title' => 'Permissoẽs de acesso',
         'baseUrl' => $baseUrl,
-        'payloadComboBox' => [
-          'userProfile' => UserProfileModel::query()->orderBy('name')->get(['id', 'name']),
-        ],
+        // 'payloadComboBox' => [
+        //   'userProfile' => UserProfileModel::query()->orderBy('name')->get(['id', 'name']),
+        // ],
         'gridList' => [
           'rowData' => $list,
           'columns' => [
@@ -59,20 +59,20 @@ class PermissionController extends AdminController
                 'type' => 'hidden'
               ],
             ],
-            [
-              'label' => 'Perfil',
-              'attrs' => [
-                'name' => 'user_profile_id',
-                'type' => 'select',
-                'maxLength' => 255,
-                'class' => $inputTailwind,
-                'autocomplete' => 'none',
-              ],
-              'populate' => [
-                'target' => 'userProfile',
-                'label' => 'name',
-              ],
-            ], 
+            // [
+            //   'label' => 'Perfil',
+            //   'attrs' => [
+            //     'name' => 'user_profile_id',
+            //     'type' => 'select',
+            //     'maxLength' => 255,
+            //     'class' => $inputTailwind,
+            //     'autocomplete' => 'none',
+            //   ],
+            //   'populate' => [
+            //     'target' => 'userProfile',
+            //     'label' => 'name',
+            //   ],
+            // ], 
           ],
         ],
       ],
