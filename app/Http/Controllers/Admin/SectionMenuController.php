@@ -5,18 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\AdminController;
 use App\Models\SectionMenuModel; 
 
-class SectionMenuController extends AdminController
-{
-  protected $model = SectionMenuModel::class;
-
-  function index()
-  {
-    return view('admin.pages.listDefault');
-  }
+class SectionMenuController extends AdminController {
+  protected $model = SectionMenuModel::class; 
 
   // listagem dos usuarios e atributos do form
-  function list()
-  {     
+  function list() {     
     $list = $this->model::orderBy('name')->withTrashed()->get(); 
     $baseUrl = '/admin/sectionMenu'; 
 
@@ -24,7 +17,7 @@ class SectionMenuController extends AdminController
 
     return view('admin.pages.listDefault', [
       'config' => [
-        'title' => 'Seções do Menu',
+        'title' => 'Seção do Menu',
         'baseUrl' => $baseUrl,
         'gridList' => [
           'rowData' => $list,

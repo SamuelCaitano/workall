@@ -17,14 +17,14 @@ class PageMenuController extends AdminController
   }
 
   // listagem dos usuarios e atributos do form
-  function list()
-  { 
-    $baseUrl = '/admin/pageMenu'; 
+  function list() { 
 
     $list = $this->model::query()
     ->with(['sectionMenu'])
     ->withTrashed()
-    ->get();     
+    ->get();   
+    
+    $baseUrl = '/admin/pageMenu';   
     
     $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md';
 

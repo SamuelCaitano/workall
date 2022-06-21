@@ -38,6 +38,6 @@ class PermissionModel extends Authenticatable
 
   function userProfile()
 	{
-		return $this->hasOne('\App\Models\UserProfileModel', 'id', 'user_profile_id');
+		return $this->hasOne('\App\Models\UserProfileModel', 'user_profile_id', 'id');
 	}
 }

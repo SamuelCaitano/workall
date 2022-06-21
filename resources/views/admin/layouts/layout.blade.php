@@ -55,9 +55,10 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
+  <script src="/plugins/jquery.min.js"></script>
   {{-- <script type="text/javascript" src="doT.js"></script>  --}}
   {{-- <script src="../path/to/flowbite/dist/flowbite.js" defer></script>   --}}
-  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
-  
+  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>  
   @stack('js')
 </body> 
+</html>

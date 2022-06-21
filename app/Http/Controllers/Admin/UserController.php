@@ -12,14 +12,14 @@ class UserController extends AdminController
   protected $model = UserModel::class;
 
   // listagem dos usuarios e atributos do form
-  function list()
-  {
-    $baseUrl = '/admin/user';
+  function list() {
 
     $list = $this->model::query()
       ->with(['userProfile'])
       ->withTrashed()
       ->get();
+
+    $baseUrl = '/admin/user';
 
     $inputTailwind = 'h-10 pl-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md';
 
