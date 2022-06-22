@@ -2291,32 +2291,6 @@ window.FormRenderEngine = /*#__PURE__*/function () {
       }
     }
   }, {
-    key: "renderBtn",
-    value: function renderBtn(opts) {
-      var btn = this.createElem('button');
-
-      if (opts.label) {
-        btn.innerHTML = opts.label;
-      }
-
-      if (opts.attrs) {
-        this.setAttrs(btn, opts.attrs);
-      }
-
-      return btn;
-    }
-  }, {
-    key: "setAttrs",
-    value: function setAttrs(elem, attrs) {
-      if (elem && attrs) {
-        for (var attr in attrs) {
-          if (Object.hasOwnProperty.call(attrs, attr)) {
-            elem.setAttribute(attr, attrs[attr]);
-          }
-        }
-      }
-    }
-  }, {
     key: "createElem",
     value: function createElem(elem) {
       return document.createElement(elem);
@@ -2333,6 +2307,32 @@ window.FormRenderEngine = /*#__PURE__*/function () {
     key: "get",
     value: function get() {
       return this.form;
+    }
+  }], [{
+    key: "renderBtn",
+    value: function renderBtn(opts) {
+      var btn = document.createElement('button');
+
+      if (opts.label) {
+        btn.innerHTML = opts.label;
+      }
+
+      if (opts.attrs) {
+        FormRenderEngine.setAttrs(btn, opts.attrs);
+      }
+
+      return btn;
+    }
+  }, {
+    key: "setAttrs",
+    value: function setAttrs(elem, attrs) {
+      if (elem && attrs) {
+        for (var attr in attrs) {
+          if (Object.hasOwnProperty.call(attrs, attr)) {
+            elem.setAttribute(attr, attrs[attr]);
+          }
+        }
+      }
     }
   }]);
 
