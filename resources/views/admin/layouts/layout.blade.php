@@ -39,7 +39,7 @@
       <!-- Sidebar -->
       @include('admin.components.sidebar')
 
-      <div class="flex-1 flex flex-col overflow-hidden">
+      <div class="flex-1 flex flex-col overflow-hidden dark:bg-gray-800 ">
 
         <!-- header -->
         @include('admin.components.header')

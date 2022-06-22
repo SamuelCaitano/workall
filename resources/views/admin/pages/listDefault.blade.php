@@ -8,7 +8,7 @@
 @endpush
 
 @section('content')
-  <div class="h-full">
+  <div class="h-full ">
     <div id="listDefault" class="ag-theme-alpine h-full"></div>
   </div>
   @include('admin.components.modal')
@@ -26,8 +26,7 @@
           this.eGui = document.createElement('div');
           this.eGui.className = 'flex flex-wrap items-center w-full'
           this.eGui.innerHTML = `
-          <span class="flex-grow flex-1">${config.title}</span>
-          <!-- Modal toggle --> 
+          <span class="flex-grow flex-1 dark:text-white">${config.title}</span> 
           <button onclick="actionForm()" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
             <i class="fa-solid fa-plus"></i>
           </button>
@@ -301,8 +300,7 @@
           'data': mappingToJsTree,
         }
       });
+      
     }
-  </script>
-{{-- <script src="../path/to/flowbite/dist/flowbite.js" defer></script>
-<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script> --}}
+  </script> 
 @endpush
