@@ -55,10 +55,16 @@
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="/js/appAdmin.js"></script>
-  <script src="/plugins/jquery.min.js"></script>
-  {{-- <script type="text/javascript" src="doT.js"></script>  --}}
-  {{-- <script src="../path/to/flowbite/dist/flowbite.js" defer></script>   --}}
-  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>  
+  <script src="/plugins/jquery.min.js"></script> 
+  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script> 
+  <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+  </script>
+   
   @stack('js')
 </body> 
 </html>

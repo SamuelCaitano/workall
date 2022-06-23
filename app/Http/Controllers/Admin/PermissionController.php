@@ -7,12 +7,14 @@ use App\Models\PermissionModel;
 use App\Models\UserProfileModel;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\json_encode;
+
 class PermissionController extends AdminController {  
   protected $model = PermissionModel::class;
 
   function list() {  
     $list = UserProfileModel::query()->orderBy('name')->get();
-    $baseUrl = '/admin/permisson';  
+    $baseUrl = '/admin/permission';  
 
     return view('admin.pages.listDefault', [ 
       'config' => [
@@ -50,4 +52,20 @@ class PermissionController extends AdminController {
       ],
     ]);
   } 
+
+  function save(Request $request) {
+    $payload = $request->all();
+
+    foreach ($payload['permission'] as $permision) {
+      $permision['id'] = null;
+      $permision['user_profile_id'] = $payload['user_profile_id'];
+
+      $permisionModel = new PermissionModel();
+      $permisionModel->fill($permision)->save();
+
+      $permision = $permisionModel;
+    }
+    
+    return json_encode($payload);
+  }
 }

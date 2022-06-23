@@ -326,7 +326,7 @@
 				if (match = item.match(/^((.*)\.(.*))\.(\w+)$/)) {
 					if (!carry[match[1]]) {
 						carry[match[1]] = {
-							session_menu_id: match[2],
+							section_menu_id: match[2],
 							page_menu_id: match[3], 
 							create: 0,
 							read: 0,
@@ -348,7 +348,13 @@
           permission: jsTreeChecked,
         }
         
-        console.log(payload)
+        console.log(`${config.baseUrl}/save`)
+        $.ajax({
+          url: `${config.baseUrl}/save`,
+          method: 'POST',
+          dataType: 'JSON',
+          data: payload,
+        });
       }
     }
 

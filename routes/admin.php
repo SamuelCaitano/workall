@@ -53,6 +53,6 @@ Route::controller(PermissionController::class)->group( function () {
 		Route::get('', "list");
 		Route::delete('{id}', "disable");
 		Route::patch('{id}', "enable");
-		Route::put('{id}', "save");
+		Route::post('{id}', "save");
 	});
 });
