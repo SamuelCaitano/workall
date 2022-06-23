@@ -65,21 +65,21 @@ window.FormRenderEngine = class FormRenderEngine {
 		}
 	}
 
-	renderBtn(opts) {
-		const btn = this.createElem('button')
+	static renderBtn(opts) {
+		const btn = document.createElement('button')
 
 		if (opts.label) {
 			btn.innerHTML = opts.label
 		}
 
 		if (opts.attrs) {
-			this.setAttrs(btn, opts.attrs)
+			FormRenderEngine.setAttrs(btn, opts.attrs)
 		}
 
 		return btn
 	}
 
-	setAttrs(elem, attrs) {
+	static setAttrs(elem, attrs) {
 		if (elem && attrs) {
 			for (const attr in attrs) {
 				if (Object.hasOwnProperty.call(attrs, attr)) {

@@ -109,7 +109,6 @@
             },
           },
         ]
-
         for (const btnOpts of btnFooterModal) document.querySelector('#componentModal footer').append(formRenderEngine.renderBtn(btnOpts))
       } 
     })
@@ -164,8 +163,8 @@
       }
 
       ComponentModal.setTitle(title + config.title).show()
-    }      
-
+    }  
+    
     async function onClickBtnFooterModalSave(event) {
       const respConfirm = await swal({
         title: `Deseja Salvar?`,
@@ -237,7 +236,7 @@
       if (resp) {
         ComponentModal.hide()
       }
-    }
+    } 
 
     /* ========================== */
 
@@ -294,13 +293,85 @@
       const rowData = gridOptions.rowData[rowIndex]
       ComponentModal.setTitle(config.title).show()
 
+      $('#componentModal main').data('rowData', rowData)
+
       $('#componentModal main').jstree({
         'plugins': ["checkbox"],
         'core': {
           'data': mappingToJsTree,
         }
-      });
-      
+      })      
     }
+
+    async function onClickBtnFooterModalSavePermission(event) {
+      const respConfirm = await swal({
+        title: `Deseja Salvar?`,
+        icon: 'warning',
+        buttons: {
+          yes: {
+            text: "Sim",
+            value: true,
+          },
+          no: {
+            text: "Não",
+            value: false,
+          },
+        },
+      })
+
+      if (respConfirm) {
+        const jsTreeChecked = $('#componentModal main').jstree().get_checked().reduce((carry, item) => {
+				let match = null
+
+				if (match = item.match(/^((.*)\.(.*))\.(\w+)$/)) {
+					if (!carry[match[1]]) {
+						carry[match[1]] = {
+							session_menu_id: match[2],
+							page_menu_id: match[3], 
+							create: 0,
+							read: 0,
+							update: 0,
+							delete: 0,
+						}
+					}
+
+					carry[match[1]][match[4]] = 1
+				}
+
+          return carry
+        }, {})    
+        
+        const rowData = $('#componentModal main').data('rowData')
+
+        const payload = {
+          user_profile_id: rowData.id,
+          permission: jsTreeChecked,
+        }
+        
+        console.log(payload)
+      }
+    }
+
+    // footer button attributes permission
+    const btnFooterModal = [{
+
+      label: 'Salvar',
+      attrs: {
+        type: 'button',
+        class: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
+        onclick: 'onClickBtnFooterModalSavePermission(event)',
+      },
+      },
+      {
+        label: 'Calcelar',
+        attrs: {
+          type: 'button',
+          class: 'text-black bg-red-400 hover:bg-red-200 focus:ring-4 focus:ring-gray-300 rounded-lg border border-red-600 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600',
+          onclick: 'onClickBtnFooterModalCancel(event)',
+        },
+      },
+    ]
+    for (const btnOpts of btnFooterModal) document.querySelector('#componentModal footer').append(FormRenderEngine.renderBtn(btnOpts))
   </script> 
 @endpush
+
