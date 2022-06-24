@@ -68,4 +68,12 @@ class PermissionController extends AdminController {
     
     return json_encode($payload);
   }
+
+  function getPermissionByProfile($id) { 
+    // dd($id);
+    $list = $this->model::query()->where('user_profile_id', $id)->get();
+
+    // dd($list);
+    return $list;
+  }
 }

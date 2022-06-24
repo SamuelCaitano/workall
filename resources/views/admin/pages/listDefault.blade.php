@@ -291,7 +291,15 @@
 
     function actionModalPermission(rowIndex) {
       const rowData = gridOptions.rowData[rowIndex]
-      ComponentModal.setTitle(config.title).show()
+      ComponentModal.setTitle(config.title).show() 
+
+      console.log(config.baseUrl + "/getPermissionByProfile?id=" + rowData.id)
+
+      $.ajax({
+        url: `${config.baseUrl}/getPermissionByProfile/${rowData.id}`,
+        method: 'GET',
+        dataType: 'JSON', 
+      });
 
       $('#componentModal main').data('rowData', rowData)
 
