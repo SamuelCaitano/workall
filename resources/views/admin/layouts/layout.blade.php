@@ -63,8 +63,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-  </script>
-   
+  </script>   
   @stack('js')
 </body> 
 </html>

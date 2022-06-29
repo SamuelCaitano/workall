@@ -49,9 +49,7 @@ Route::controller(PageMenuController::class)->group(function () {
 Route::controller(PermissionController::class)->group(function () {
 	Route::group(['prefix' => 'permission'], function () {
 		Route::get('', "list");
-		Route::get('/getPermissionByProfile/{id}', "getPermissionByProfile");
-		Route::delete('{id}', "disable");
-		Route::patch('{id}', "enable");
-		Route::post('{id}', "save");
+		Route::get('getPermissionByProfile/{id}', "getPermissionByProfile"); 
+		Route::put('{id}', "save");
 	});
 });

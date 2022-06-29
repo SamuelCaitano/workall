@@ -56,7 +56,7 @@ class PermissionController extends AdminController {
   function save(Request $request) {
     $payload = $request->all();
 
-    foreach ($payload['permission'] as $permision) {
+    foreach ($payload['permission'] as &$permision) {
       $permision['id'] = null;
       $permision['user_profile_id'] = $payload['user_profile_id'];
 
@@ -69,11 +69,9 @@ class PermissionController extends AdminController {
     return json_encode($payload);
   }
 
-  function getPermissionByProfile($id) { 
-    // dd($id);
+  function getPermissionByProfile($id) {  
     $list = $this->model::query()->where('user_profile_id', $id)->get();
 
-    // dd($list);
     return $list;
   }
 }
